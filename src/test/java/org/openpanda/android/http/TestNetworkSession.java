@@ -14,7 +14,7 @@ public class TestNetworkSession {
     @Test
     public void testGetJson(){
 
-        HttpRequest request = HttpRequest.jsonRequest("http://openpanda.org:8081/account/search?search=l&page=1&pagesize=10",HttpRequestMethod.HTTP_GET);
+        HttpRequest request = HttpRequest.jsonRequest("http://localhost:8081/account/search?search=l&page=1&pagesize=10",HttpRequestMethod.HTTP_GET);
 
         HttpResponse response = NetworkSession.sharedInstance().syncRequest(request);
 
@@ -27,7 +27,7 @@ public class TestNetworkSession {
 
     @Test
     public void testPostJson(){
-        String url = "http://openpanda.org:8081/account";
+        String url = "http://localhost:8081/account";
         Map<String,Object> params = new HashMap();
 
         params.put("username","lingen");
@@ -49,7 +49,7 @@ public class TestNetworkSession {
     @Test
     public void testPutJson(){
 
-        String url = "http://openpanda.org:8081//account/changePwd";
+        String url = "http://localhost:8081//account/changePwd";
         Map<String,Object> params = new HashMap();
 
         params.put("user_id","123");
